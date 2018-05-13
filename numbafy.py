@@ -1,4 +1,4 @@
-__version__ = '0.05'
+__version__ = '0.51'
 import sympy as sym
 
 def numbafy(expression, parameters=None, constants=None, use_cse=False, new_function_name='numbafy_func'):

@@ -16,17 +16,18 @@ Simple example
     parameters = (a, b)
 
     num = numbafy(expression=expression, parameters=parameters, constants=constants, use_cse=True)
+
     exec(num)
+
     result = numbafy_func(a=2.0, b=3.0)
+
     print(result)
+    >>> 11.2
 
+For a more complete example with huge expression see the Showcase.ipynb.
 
-|travis|
 
 |binder| to test the *Showcase.ipynb*.
 
-.. |binder| image:: http://mybinder.org/badge.svg 
+.. |binder| image:: http://mybinder.org/badge.svg
    :target: http://mybinder.org:/repo/jankoslavic/numbafy
-.. |travis| image:: https://travis-ci.org/openmodal/lvm_read.svg?branch=master
-    :target: https://travis-ci.org/jankoslavic/numbafy
-
