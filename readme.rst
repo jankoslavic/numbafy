@@ -5,26 +5,18 @@ For a showcase see: https://github.com/jankoslavic/numbafy/blob/master/Showcase.
 
 Simple example
 
-..code-block:: python
+.. code-block:: python
     import sympy as sym
     from numba import jit
 
     a, b, c = sym.symbols('a, b, c')
-
     constants = {c: 1.4}
-
     expression = c * a**b
-
     parameters = (a, b)
-
     num = numbafy(expression=expression, parameters=parameters, constants=constants, use_cse=True)
-
     exec(num)
-
     result = numbafy_func(a=2.0, b=3.0)
-
     print(result)
-
     >>> 11.2
 
 For a more complete example with huge expression see the Showcase.ipynb.
