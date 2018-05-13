@@ -13,6 +13,7 @@ Simple example
     constants = {c: 1.4}
 
     expression = c * a**b
+
     parameters = (a, b)
 
     num = numbafy(expression=expression, parameters=parameters, constants=constants, use_cse=True)
@@ -22,6 +23,7 @@ Simple example
     result = numbafy_func(a=2.0, b=3.0)
 
     print(result)
+
     >>> 11.2
 
 For a more complete example with huge expression see the Showcase.ipynb.
