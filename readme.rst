@@ -4,6 +4,7 @@ For a showcase see: https://github.com/jankoslavic/numbafy/blob/master/Showcase.
 =============
 
 Simple example
+
 ..code-block:: python
     import sympy as sym
     from numba import jit
