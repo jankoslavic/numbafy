@@ -1,4 +1,4 @@
-__version__ = '0.51'
+__version__ = '0.52'
 import sympy as sym
 
 def numbafy(expression, parameters=None, constants=None, use_cse=False, new_function_name='numbafy_func'):
@@ -43,6 +43,7 @@ if __name__ == '__main__':
     import sympy as sym
     from numba import jit
 
+    # this is a very basic example; numbafy shines with huge expression
     a, b, c = sym.symbols('a, b, c')
 
     constants = {c: 1.4}

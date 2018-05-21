@@ -9,7 +9,7 @@ For a showcase see: https://github.com/jankoslavic/numbafy/blob/master/Showcase.
 #from distutils.core import setup, Extension
 from setuptools import setup, Extension
 setup(name='numbafy',
-      version='0.51',
+      version='0.52',
       author='Janko Slavič',
       author_email='janko.slavic@fs.uni-lj.si',
       url='https://github.com/jankoslavic/numbafy',

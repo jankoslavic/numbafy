@@ -9,6 +9,8 @@ Simple example:
 
     from numba import jit
 
+    # this is a very basic example; numbafy shines with huge expression
+
     a, b, c = sym.symbols('a, b, c')
 
     constants = {c: 1.4}
