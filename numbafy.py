@@ -26,7 +26,7 @@ def numbafy(expression, parameters=None, constants=None, use_cse=False, new_func
         code_cse = '\n    '.join(code_cse)
         code_expression = f'{expressions[1][0]}'
     else:
-        code_expression = f'{expression[0]}'
+        code_expression = f'{expression}'
         
 
     template = f"""@jit
