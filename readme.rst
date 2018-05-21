@@ -30,6 +30,7 @@ Simple example:
     >>> 11.2
 
 For a more complete example with huge expression see the Showcase.ipynb.
+
 For speed comparison see: https://twitter.com/jankoslavic/status/995748211313774592.
 
 
