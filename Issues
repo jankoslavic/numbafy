@@ -1,0 +1,27 @@
+Sir, I am working on the dynamics of a Robot Problem for that I need to calculate the transformation matrix of size 4x4. I have kept the
+transformation matrix in the symbolic form and reason is that I need to calculate the velocity vector Uij made up of list of list after
+differentiation with respect to joint angle.
+
+# T stores the list of transformation Matrix [T01, T02 , T03 ... ]
+T= [[4x4 symbolic matrix], [4x4 symbolic matrix], [4x4 symbolic matrix], ......10 terms]
+# Qdiff stores the number of joint angles
+Qdiff=[Q1,Q2,Q3,Q4,Q5,Q6,Q7,Q8,Q9,Q10]
+
+# U2d is the velocity matrix stores in a list of list where 
+U2d[2][3] gives differentiation of T[0][2] wrt Q3
+I have stored it in a list of list to get it in the form of U2d[i][j]
+U2d=[ [ T[i].diff(Qdiff[j]) for j in list(range(0,i+1)) ] for i in list(range(10)) ]
+
+U2nsubs is a list of list of conversion from symbolic expression to function using lambdify (which is computationaly very costly)
+U2nsubs=[[sp.lambdify([[Q1,Q2,Q3,Q4,Q5,Q6,Q7,Q8,Q9,Q10]],U2d[i][j]) for j in range(0,i+1)]for i in range(10)]
+
+Here I am trying to get an numpy array by substituting various joint angle position at different iteration k
+q is list of list of joint angle at different time interval 
+q= [[10 real values of Q1],[10 real values of Q2],[10 real values of Q3],....]
+
+U2dsubs=[[[U2nsubs[i][j]([q[0][k],q[1][k],q[2][k],q[3][k],q[4][k],q[5][k],q[6][k],q[7][k],q[8][k],q[9][k],q[10][k]]) for k in list(range(10))]for j in range(0,i+1)]for i in range(10)]
+
+U2dsubs[i][j][k] will substitutes the joint angle from Q1 to Q10 at kth interval.
+
+# How to evaluate this using Numbafy I am having trouble doing this. Please do help 
+Thanks 
