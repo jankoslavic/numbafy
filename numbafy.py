@@ -1,5 +1,7 @@
-__version__ = '0.52'
+__version__ = '0.53'
 import sympy as sym
+from sympy.utilities.lambdify import lambdastr
+
 
 def numbafy(expression, parameters=None, constants=None, use_cse=False, new_function_name='numbafy_func'):
     cse = sym.cse(expression)
@@ -26,7 +28,9 @@ def numbafy(expression, parameters=None, constants=None, use_cse=False, new_func
         code_cse = '\n    '.join(code_cse)
         code_expression = f'{expressions[1][0]}'
     else:
-        code_expression = f'{expression}'
+        temp = lambdastr((), expression)
+        temp = temp[len('lambda : '):]
+        code_expression = f'{temp}'
         
 
     template = f"""@jit
